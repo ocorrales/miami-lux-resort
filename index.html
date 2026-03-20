@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miami Lux Resort — Private Villa in Cutler Bay, FL</title>
+  <meta name="description" content="Miami Lux Resort: luxury 6-bedroom private villa in Cutler Bay, FL. Private pool, pickleball court, game room, mini golf & fire pit. Up to 10 guests. Book direct via WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://paradisehousemiami.com/">
+  <meta property="og:title" content="Miami Lux Resort — Private Villa in Cutler Bay, FL">
+  <meta property="og:description" content="6 bedrooms · Private pool · Pickleball · Game room · Mini golf · Up to 10 guests">
+  <meta property="og:image" content="images/max_0083.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #F5EFE0;
+      --sand:     #E8DCC8;
+      --terra:    #B85C38;
+      --green:    #1E3A2F;
+      --ink:      #1A1A18;
+      --muted:    #6B6456;
+      --white:    #FDFAF5;
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    }
+    nav.scrolled {
+      background: var(--white);
+      padding: 18px 48px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: color 0.4s;
+    }
+    nav.scrolled .nav-logo { color: var(--ink); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav.scrolled .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--terra) !important; }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terra);
+      padding: 10px 22px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav.scrolled .nav-cta { color: var(--white); }
+    .nav-cta:hover { background: var(--green); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: background 0.4s, transform 0.3s;
+    }
+    nav.scrolled .hamburger span { background: var(--ink); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--green);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .mobile-menu a:hover { color: var(--terra); }
+    .close-menu {
+      position: absolute;
+      top: 28px; right: 36px;
+      font-size: 2rem;
+      color: var(--cream);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-slide.active {
+      opacity: 1;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 18, 14, 0.36);
+    }
+    .hero-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10,18,14,0.82) 0%,
+        rgba(10,18,14,0.32) 48%,
+        rgba(10,18,14,0.08) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 64px 72px;
+      max-width: 780px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f0a888;
+      margin-bottom: 20px;
+      opacity: 0;
+      text-shadow: 0 1px 16px rgba(0,0,0,0.8);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      opacity: 0;
+      text-shadow: 0 2px 28px rgba(0,0,0,0.5);
+    }
+    .hero h1 em { font-style: italic; color: #f5d9c2; }
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 40px;
+      opacity: 0;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-meta-item span:first-child {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.5);
+    }
+    .hero-meta-item span:last-child {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      opacity: 0;
+    }
+    .btn-primary {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terra);
+      padding: 15px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      will-change: transform;
+    }
+    .btn-ghost {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      padding: 15px 32px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      will-change: transform;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      right: 64px;
+      bottom: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 2;
+    }
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      writing-mode: vertical-rl;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--terra);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      to { top: 100%; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTION SHARED ──────────────────────────────────── */
+    section { padding: 120px 0; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 64px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    /* ─── INTRO SPLIT ─────────────────────────────────────── */
+    .intro {
+      background: var(--white);
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+    .intro-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .intro-text h2 em { font-style: italic; color: var(--terra); }
+    .intro-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .intro-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--sand);
+      margin-top: 48px;
+    }
+    .intro-stat {
+      background: var(--white);
+      padding: 24px 28px;
+    }
+    .intro-stat strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .intro-stat span {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .intro-image {
+      position: relative;
+    }
+    .intro-image img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+    }
+    .intro-image-badge {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      background: var(--terra);
+      color: var(--white);
+      padding: 20px 24px;
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    .intro-image-badge strong {
+      display: block;
+      font-style: normal;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    /* ─── AMENITIES ───────────────────────────────────────── */
+    .amenities {
+      background: var(--green);
+    }
+    .amenities .section-label { color: var(--terra); }
+    .amenities-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 72px;
+    }
+    .amenities-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .amenities-header p {
+      max-width: 300px;
+      font-size: 0.9rem;
+      color: rgba(245,239,224,0.55);
+      line-height: 1.7;
+      text-align: right;
+    }
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .amenity-item {
+      background: var(--green);
+      padding: 40px 32px;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+    }
+    .amenity-item:hover { background: rgba(255,255,255,0.09); }
+    .amenity-item .see-photos {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terra);
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .amenity-item:hover .see-photos { opacity: 1; }
+    .amenity-item .see-photos svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .amenity-item:hover .see-photos svg { transform: translateX(3px); }
+
+    /* ─── AMENITY PANEL ───────────────────────────────────── */
+    .amenity-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,18,14,0.65);
+      z-index: 200;
+      backdrop-filter: blur(3px);
+    }
+    .amenity-panel {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: min(680px, 92vw);
+      background: var(--green);
+      z-index: 201;
+      overflow-y: auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 40px 48px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      background: var(--green);
+      z-index: 2;
+    }
+    .panel-header-text .panel-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 8px;
+    }
+    .panel-header-text h3 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .panel-header-text p {
+      font-size: 0.88rem;
+      color: rgba(245,239,224,0.55);
+      margin-top: 8px;
+      line-height: 1.6;
+      max-width: 380px;
+    }
+    .panel-close {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: var(--cream);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-left: 20px;
+      transition: background 0.2s;
+    }
+    .panel-close:hover { background: rgba(255,255,255,0.16); }
+    .panel-photos {
+      padding: 36px 48px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .panel-photo {
+      overflow: hidden;
+      cursor: zoom-in;
+      position: relative;
+    }
+    .panel-photo:first-child {
+      grid-column: 1 / -1;
+    }
+    .panel-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .panel-photo:first-child img { min-height: 340px; }
+    .panel-photo:not(:first-child) img { min-height: 200px; }
+    .panel-photo:hover img { transform: scale(1.04); }
+    .panel-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,18,14,0);
+      transition: background 0.3s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .panel-photo:hover .panel-photo-overlay { background: rgba(10,18,14,0.25); }
+    .panel-photo-overlay svg {
+      opacity: 0; color: white; width: 32px; height: 32px;
+      transition: opacity 0.3s;
+    }
+    .panel-photo:hover .panel-photo-overlay svg { opacity: 1; }
+    .amenity-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      color: var(--terra);
+    }
+    .amenity-item h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .amenity-item p {
+      font-size: 0.82rem;
+      color: rgba(245,239,224,0.5);
+      line-height: 1.6;
+    }
+
+    /* ─── GALLERY ─────────────────────────────────────────── */
+    .gallery {
+      background: var(--cream);
+      padding-bottom: 0;
+    }
+    .gallery-header {
+      margin-bottom: 56px;
+    }
+    .gallery-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 6px;
+    }
+    .g1 { grid-column: 1 / 8; grid-row: 1 / 3; }
+    .g2 { grid-column: 8 / 13; grid-row: 1 / 2; }
+    .g3 { grid-column: 8 / 11; grid-row: 2 / 3; }
+    .g4 { grid-column: 11 / 13; grid-row: 2 / 3; }
+    .g5 { grid-column: 1 / 5; grid-row: 3 / 4; }
+    .g6 { grid-column: 5 / 9; grid-row: 3 / 4; }
+    .g7 { grid-column: 9 / 13; grid-row: 3 / 4; }
+
+    .gallery-item {
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .g1 img { min-height: 560px; }
+    .g2 img, .g3 img, .g4 img { min-height: 276px; }
+    .g5 img, .g6 img, .g7 img { min-height: 320px; }
+
+    .gallery-more {
+      text-align: center;
+      padding: 56px 0;
+    }
+    .gallery-more p {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── LIGHTBOX ────────────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20,28,22,0.95);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 28px; right: 36px;
+      font-size: 2rem;
+      color: var(--cream);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lightbox-arrow:hover { background: rgba(255,255,255,0.2); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+
+    /* ─── EXPERIENCES ─────────────────────────────────────── */
+    .experiences {
+      background: var(--white);
+    }
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .experiences-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+    .experiences-text h2 em { font-style: italic; color: var(--terra); }
+    .experiences-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .exp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--sand);
+    }
+    .exp-list li:last-child { border-bottom: none; }
+    .exp-num {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--sand);
+      line-height: 1;
+      min-width: 36px;
+    }
+    .exp-info h4 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .exp-info p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .experiences-image img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── REVIEWS ─────────────────────────────────────────── */
+    .reviews {
+      background: var(--cream);
+    }
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+    .reviews-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .reviews-score {
+      text-align: right;
+    }
+    .reviews-score strong {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+      display: block;
+    }
+    .reviews-score span {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .reviews-stars { color: var(--terra); font-size: 1rem; letter-spacing: 2px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--sand);
+    }
+    .review-card {
+      background: var(--cream);
+      padding: 40px 36px;
+    }
+    .review-quote {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--terra);
+      line-height: 0.6;
+      margin-bottom: 20px;
+    }
+    .review-card p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+    .review-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ─── LOCATION ────────────────────────────────────────── */
+    .location {
+      background: var(--white);
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+    .location-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .location-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    .proximity-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .proximity-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--sand);
+      font-size: 0.9rem;
+    }
+    .proximity-list li span:first-child { color: var(--ink); }
+    .proximity-list li span:last-child {
+      color: var(--terra);
+      font-family: var(--serif);
+      font-size: 0.85rem;
+    }
+    .location-map {
+      position: relative;
+      overflow: hidden;
+    }
+    .location-map img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+    }
+    .map-link {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: var(--white);
+      padding: 12px 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .map-link:hover { background: var(--cream); }
+
+    /* ─── BOOKING CTA ─────────────────────────────────────── */
+    .booking {
+      background: var(--green);
+      padding: 120px 0;
+    }
+    .booking-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+    .booking-text .section-label { color: var(--terra); }
+    .booking-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .booking-text h2 em { font-style: italic; }
+    .booking-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(245,239,224,0.6);
+      margin-bottom: 40px;
+    }
+    .booking-rules {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .booking-rules li {
+      font-size: 0.85rem;
+      color: rgba(245,239,224,0.7);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .booking-rules li::before {
+      content: '—';
+      color: var(--terra);
+      flex-shrink: 0;
+    }
+    .booking-card {
+      background: var(--cream);
+      padding: 52px 48px;
+    }
+    .booking-card h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .booking-card > p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #25D366;
+      color: var(--white);
+      padding: 18px 28px;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: background 0.3s, transform 0.2s;
+      margin-bottom: 16px;
+    }
+    .whatsapp-btn:hover { background: #1fb858; transform: translateY(-1px); }
+    .whatsapp-icon { width: 22px; height: 22px; flex-shrink: 0; }
+    .booking-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .booking-divider::before,
+    .booking-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--sand);
+    }
+    .quick-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .quick-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border: 1px solid var(--sand);
+      color: var(--ink);
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .quick-link:hover { border-color: var(--terra); background: var(--white); }
+    .quick-link svg { width: 16px; height: 16px; color: var(--terra); flex-shrink: 0; }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      padding: 72px 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 64px;
+    }
+    .footer-brand h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(245,239,224,0.4);
+      line-height: 1.7;
+      max-width: 280px;
+      margin-bottom: 28px;
+    }
+    .footer-col h4 {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,239,224,0.35);
+      margin-bottom: 20px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      font-size: 0.88rem;
+      color: rgba(245,239,224,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--terra); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(245,239,224,0.25);
+    }
+
+    /* ─── FLOATING WA BUTTON ──────────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      padding: 14px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
+    .wa-float svg { width: 20px; height: 20px; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .container { padding: 0 40px; }
+      nav { padding: 24px 40px; }
+      nav.scrolled { padding: 16px 40px; }
+      .hero-content { padding: 0 40px 60px; }
+      .scroll-indicator { right: 40px; bottom: 60px; }
+      .intro-grid,
+      .experiences-grid,
+      .location-grid,
+      .booking-inner { grid-template-columns: 1fr; gap: 60px; }
+      .intro-image-badge { display: none; }
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; gap: 2px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .g1 { grid-column: 1 / 9; }
+      .g2 { grid-column: 9 / 13; }
+      .g3 { grid-column: 1 / 7; }
+      .g4 { grid-column: 7 / 13; }
+      .g5, .g6, .g7 { grid-column: span 4; }
+      .amenities-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .amenities-header p { text-align: left; max-width: 100%; }
+      .reviews-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 80px 0; }
+      .container { padding: 0 24px; }
+      nav { padding: 20px 24px; }
+      nav.scrolled { padding: 14px 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-content { padding: 0 24px 48px; }
+      .scroll-indicator { display: none; }
+      .amenities-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .g1 { grid-column: 1 / -1; grid-row: auto; }
+      .g2, .g3, .g4, .g5, .g6, .g7 { grid-column: span 1; grid-row: auto; }
+      .g1 img { min-height: 260px; }
+      .g2 img, .g3 img, .g4 img, .g5 img, .g6 img, .g7 img { min-height: 200px; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
+      .intro-stats { grid-template-columns: 1fr 1fr; }
+      .booking-card { padding: 36px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 480px) {
+      .amenities-grid { grid-template-columns: 1fr; }
+      .intro-stats { grid-template-columns: 1fr 1fr; }
+      .hero-meta { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Miami Lux Resort</a>
+  <ul class="nav-links">
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="https://wa.me/13055551234?text=Hi!%20I%27m%20interested%20in%20booking%20Miami%20Lux%20Resort.%20Could%20you%20share%20availability%20and%20rates?" class="nav-cta" target="_blank">Book Now</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <a href="#amenities" class="mobile-link">Amenities</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#location" class="mobile-link">Location</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="https://wa.me/13055551234?text=Hi!%20I%27m%20interested%20in%20booking%20Miami%20Lux%20Resort." target="_blank">Book via WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-slide active" style="background-image:url('images/hero/dsc00389.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00413.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00515.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00573.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00583.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/max_0084.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00197.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00383.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero/dsc00547.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Cutler Bay · Miami, Florida</div>
+    <h1>Where <em>Miami</em><br>comes to play</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span>6</span>
+        <span>Bedrooms</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>10</span>
+        <span>Guests</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>5★</span>
+        <span>Rating</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>5+</span>
+        <span>Activities</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="https://wa.me/13055551234?text=Hi!%20I%27m%20interested%20in%20booking%20Miami%20Lux%20Resort.%20Could%20you%20share%20availability%20and%20rates?" class="btn-primary" target="_blank">Check Availability</a>
+      <a href="#gallery" class="btn-ghost">View Gallery</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <div class="section-label">The Property</div>
+        <h2>A resort-style<br><em>retreat</em> for groups</h2>
+        <p>Set on a lush, forested lot in Cutler Bay, Miami Lux Resort is the rare rental that actually delivers on its name. Six spacious bedrooms, bright open living areas, and a backyard built for unforgettable memories.</p>
+        <p>Whether you're here for a family reunion, a birthday getaway, or just because Miami calls — this is the house that makes every occasion feel like a celebration.</p>
+        <div class="intro-stats">
+          <div class="intro-stat">
+            <strong>6</strong>
+            <span>Bedrooms</span>
+          </div>
+          <div class="intro-stat">
+            <strong>10</strong>
+            <span>Max Guests</span>
+          </div>
+          <div class="intro-stat">
+            <strong>5★</strong>
+            <span>Reviews</span>
+          </div>
+          <div class="intro-stat">
+            <strong>5+</strong>
+            <span>Activities</span>
+          </div>
+        </div>
+      </div>
+      <div class="intro-image reveal">
+        <img src="images/exterior/dsc00042.jpg" alt="Miami Lux Resort exterior" loading="lazy">
+        <div class="intro-image-badge">
+          <strong>100%</strong>
+          5-star rated
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities" id="amenities">
+  <div class="container">
+    <div class="amenities-header reveal">
+      <div>
+        <div class="section-label">What's Included</div>
+        <h2>Everything you need.<br>Nothing you don't.</h2>
+      </div>
+      <p>Every amenity is included in your stay — no hidden fees, no extra charges.</p>
+    </div>
+    <div class="amenities-grid">
+
+      <div class="amenity-item reveal" data-amenity="pool">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 15c0-2.21 3.582-4 8-4s8 1.79 8 4v2H3v-2Z"/>
+          <ellipse cx="11" cy="9" rx="4" ry="5"/>
+        </svg>
+        <h3>Private Pool</h3>
+        <p>Your own resort-style pool with sun deck — available all day, every day of your stay.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="gameroom">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <path d="M8 21h8M12 17v4"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <h3>Game Room</h3>
+        <p>Full-size pool table, board games, and entertainment — the perfect rainy day escape.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="pickleball">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M5 12l4-4M5 12l4 4M19 12l-4-4M19 12l-4 4"/>
+          <rect x="2" y="8" width="20" height="8" rx="1"/>
+        </svg>
+        <h3>Pickleball Court</h3>
+        <p>Regulation-size court right on the property. Paddles and balls included.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="minigolf">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M3 12h3M18 12h3M12 3v3M12 18v3"/>
+          <path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M16.3 7.7l2.1-2.1M5.6 18.4l2.1-2.1"/>
+        </svg>
+        <h3>Mini Golf</h3>
+        <p>A full mini golf course in the backyard. Family-friendly fun for all ages.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="firepit">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+          <path d="M9 9h.01M15 9h.01"/>
+          <path d="M7 19.4A9.97 9.97 0 0 1 5 14c0-1.7.4-3.3 1.1-4.7"/>
+        </svg>
+        <h3>Fire Pit</h3>
+        <p>Gather around the fire pit on warm Miami evenings. Perfect for stories and s'mores.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="bedrooms">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        <h3>6 Bedrooms</h3>
+        <p>Spacious, well-appointed rooms with quality linens and ample storage for longer stays.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="grounds">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <h3>Lush Forest Grounds</h3>
+        <p>Surrounded by mature tropical trees — natural privacy and shade for outdoor relaxation.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="kitchen">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <h3>Full Kitchen</h3>
+        <p>Fully equipped with modern appliances — cook for the whole group without a second thought.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+      <div class="amenity-item reveal" data-amenity="lounge">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M20 9V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2"/>
+          <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/>
+          <path d="M4 18v2M20 18v2"/>
+        </svg>
+        <h3>Lounge & The Sandbar</h3>
+        <p>Sun loungers, private sand, and shaded seating areas — every corner invites you to slow down.</p>
+        <div class="see-photos">Photos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="section-label">The Space</div>
+      <h2>See it for yourself</h2>
+    </div>
+  </div>
+  <div style="padding: 0 64px;" class="gallery-wrap">
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item g1" data-index="0">
+        <img src="images/aerial/max_0089-hdr.jpg" alt="Miami Lux Resort aerial view" loading="lazy">
+      </div>
+      <div class="gallery-item g2" data-index="1">
+        <img src="images/forest/dsc00211.jpg" alt="Property forest grounds" loading="lazy">
+      </div>
+      <div class="gallery-item g3" data-index="2">
+        <img src="images/pool/dsc00440.jpg" alt="Pool area" loading="lazy">
+      </div>
+      <div class="gallery-item g4" data-index="3">
+        <img src="images/gameroom/dsc00540.jpg" alt="Game room" loading="lazy">
+      </div>
+      <div class="gallery-item g5" data-index="4">
+        <img src="images/lounge/dsc00155.jpg" alt="Lounge area" loading="lazy">
+      </div>
+      <div class="gallery-item g6" data-index="5">
+        <img src="images/bedrooms/dsc00589.jpg" alt="Bedroom" loading="lazy">
+      </div>
+      <div class="gallery-item g7" data-index="6">
+        <img src="images/aerial/max_0073-hdr.jpg" alt="Aerial view" loading="lazy">
+      </div>
+    </div>
+  </div>
+  <div class="gallery-more">
+    <p>84 professional photos available · <a href="https://wa.me/13055551234?text=Hi!%20Can%20you%20send%20me%20more%20photos%20of%20Miami%20Lux%20Resort?" target="_blank" style="color: var(--terra); text-decoration: none;">Request full photo tour</a></p>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="experiences" id="activities">
+  <div class="container">
+    <div class="experiences-grid">
+      <div class="experiences-text reveal">
+        <div class="section-label">Activities</div>
+        <h2>Five reasons to<br>never <em>leave</em></h2>
+        <p>Most vacation rentals ask you to leave for fun. Miami Lux Resort built the fun right into the property.</p>
+        <ul class="exp-list">
+          <li>
+            <span class="exp-num">01</span>
+            <div class="exp-info">
+              <h4>Morning swim, every day</h4>
+              <p>Your private pool is heated and ready — no crowds, no schedules, no sharing.</p>
+            </div>
+          </li>
+          <li>
+            <span class="exp-num">02</span>
+            <div class="exp-info">
+              <h4>Pickleball tournaments</h4>
+              <p>Challenge the group on a regulation court. Equipment provided — bragging rights optional.</p>
+            </div>
+          </li>
+          <li>
+            <span class="exp-num">03</span>
+            <div class="exp-info">
+              <h4>Mini golf in the backyard</h4>
+              <p>A full course set against a tropical backdrop. Great for all ages.</p>
+            </div>
+          </li>
+          <li>
+            <span class="exp-num">04</span>
+            <div class="exp-info">
+              <h4>Game room showdowns</h4>
+              <p>Pool table, games, and air conditioning. The ideal mid-afternoon retreat.</p>
+            </div>
+          </li>
+          <li>
+            <span class="exp-num">05</span>
+            <div class="exp-info">
+              <h4>Fire pit nights</h4>
+              <p>End every evening gathered around the fire. Miami nights are better outdoors.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="experiences-image reveal">
+        <img src="images/aerial/max_0080-hdr.jpg" alt="Property grounds aerial" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div>
+        <div class="section-label">Guest Reviews</div>
+        <h2>What guests say</h2>
+      </div>
+      <div class="reviews-score">
+        <div class="reviews-stars">★★★★★</div>
+        <strong>5.0</strong>
+        <span>Perfect score</span>
+      </div>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p>This place blew us away. The pickleball court alone was worth it — we played every single morning. The pool was pristine, the game room kept the kids entertained, and the space never felt crowded even with 10 of us.</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Maria G.</div>
+            <div class="review-date">Family reunion · 7 nights</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p>We've done a lot of group rentals in Miami and this is hands down the best. The forest setting gives it a private, secluded feel while still being 20 minutes from everything. The fire pit was a nightly ritual.</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Robert & Crew</div>
+            <div class="review-date">Birthday getaway · 5 nights</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p>The photos don't do it justice. The backyard is massive — we had a full mini golf tournament and there was still room to lounge. Incredibly clean, well-stocked kitchen, and the host was responsive from day one.</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <div>
+            <div class="review-name">Lisa T.</div>
+            <div class="review-date">Friends weekend · 4 nights</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div class="location-text reveal">
+        <div class="section-label">Location</div>
+        <h2>Cutler Bay,<br>Miami — FL</h2>
+        <p>Tucked into a quiet, leafy neighborhood in South Miami-Dade, yet minutes from everything that makes Miami great. Beaches, nature, dining, and nightlife — all within easy reach.</p>
+        <ul class="proximity-list">
+          <li>
+            <span>Matheson Hammock Beach</span>
+            <span>12 min</span>
+          </li>
+          <li>
+            <span>Deering Estate</span>
+            <span>8 min</span>
+          </li>
+          <li>
+            <span>Biscayne National Park</span>
+            <span>20 min</span>
+          </li>
+          <li>
+            <span>Miami International Airport</span>
+            <span>30 min</span>
+          </li>
+          <li>
+            <span>South Beach</span>
+            <span>35 min</span>
+          </li>
+          <li>
+            <span>Wynwood Arts District</span>
+            <span>40 min</span>
+          </li>
+        </ul>
+      </div>
+      <div class="location-map reveal">
+        <img src="images/aerial/max_0095-hdr.jpg" alt="Aerial view of Miami Lux Resort location" loading="lazy">
+        <a href="https://maps.google.com/?q=Cutler+Bay+FL" target="_blank" class="map-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Open in Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="booking-inner">
+      <div class="booking-text reveal">
+        <div class="section-label">Book Direct</div>
+        <h2>Ready to make<br><em>memories?</em></h2>
+        <p>Book directly with us via WhatsApp — no platform fees, no middlemen. Just a quick conversation to confirm your dates and you're done.</p>
+        <ul class="booking-rules">
+          <li>Check-in 3:00 PM · Check-out 11:00 AM</li>
+          <li>Up to 10 guests · 6 bedrooms</li>
+          <li>No smoking indoors</li>
+          <li>Pets considered on request</li>
+          <li>Quiet hours after 11 PM</li>
+        </ul>
+      </div>
+      <div class="booking-card reveal">
+        <h3>Get in touch</h3>
+        <p>We typically respond within 30 minutes during business hours.</p>
+        <a href="https://wa.me/13055551234?text=Hi!%20I%27d%20like%20to%20book%20Miami%20Lux%20Resort.%20Could%20you%20share%20availability%20and%20nightly%20rates?" class="whatsapp-btn" target="_blank">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+        <div class="booking-divider">or ask about</div>
+        <div class="quick-links">
+          <a href="https://wa.me/13055551234?text=Hi!%20What%20are%20your%20available%20dates%20for%20Miami%20Lux%20Resort?" class="quick-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Check available dates
+          </a>
+          <a href="https://wa.me/13055551234?text=Hi!%20What%20are%20the%20nightly%20rates%20for%20Miami%20Lux%20Resort?" class="quick-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Ask about rates
+          </a>
+          <a href="https://wa.me/13055551234?text=Hi!%20Can%20you%20send%20me%20more%20photos%20of%20Miami%20Lux%20Resort?" class="quick-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Request more photos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Miami Lux Resort</h3>
+        <p>A private luxury villa in Cutler Bay, Florida. Six bedrooms, resort-style amenities, and endless sunshine — available for direct booking via WhatsApp.</p>
+        <a href="https://wa.me/13055551234" target="_blank" style="color: #25D366; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;">→ WhatsApp Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Property</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#activities">Activities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Plan Your Stay</h4>
+        <ul>
+          <li><a href="#reviews">Guest Reviews</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#booking">Book Direct</a></li>
+          <li><a href="https://wa.me/13055551234" target="_blank">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Miami Lux Resort · Cutler Bay, Florida</p>
+      <p>Direct bookings only · No platform fees</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/13055551234?text=Hi!%20I%27m%20interested%20in%20Miami%20Lux%20Resort!" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+  Book via WhatsApp
+</a>
+
+<!-- AMENITY PANEL -->
+<div class="amenity-backdrop" id="amenityBackdrop"></div>
+<div class="amenity-panel" id="amenityPanel">
+  <div class="panel-header">
+    <div class="panel-header-text">
+      <div class="panel-label" id="panelLabel">Amenity</div>
+      <h3 id="panelTitle">Title</h3>
+      <p id="panelDesc">Description</p>
+    </div>
+    <button class="panel-close" id="panelClose">✕</button>
+  </div>
+  <div class="panel-photos" id="panelPhotos"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">✕</button>
+  <button class="lightbox-arrow lightbox-prev" id="lbPrev">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-arrow lightbox-next" id="lbNext">›</button>
+</div>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+  // ── HERO SLIDESHOW ───────────────────────────────────────
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
+
+  function nextSlide() {
+    heroSlides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % heroSlides.length;
+    heroSlides[currentSlide].classList.add('active');
+  }
+
+  // Arranca el slideshow después de 3.5 segundos y cambia cada 4s
+  setTimeout(() => {
+    nextSlide();
+    setInterval(nextSlide, 4000);
+  }, 3500);
+
+  // ── AMENITY PANEL DATA ───────────────────────────────────
+  const amenityData = {
+    pool: {
+      label: 'Private Pool',
+      title: 'Your pool, your rules',
+      desc: 'Resort-style pool with sun deck, all day, every day of your stay. No crowds, no schedules.',
+      photos: ['pool/dsc00173.jpg','pool/dsc00182-hdr.jpg','pool/dsc00272-hdr.jpg','pool/dsc00431.jpg','pool/dsc00440.jpg']
+    },
+    gameroom: {
+      label: 'Game Room',
+      title: 'The ultimate hangout',
+      desc: 'Full-size pool table, games, and entertainment. The perfect escape for any age.',
+      photos: ['gameroom/dsc00540.jpg','gameroom/dsc00547.jpg']
+    },
+    pickleball: {
+      label: 'Pickleball Court',
+      title: 'Game on',
+      desc: 'Regulation-size court right on the property. Paddles and balls included — just show up.',
+      photos: ['pickleball/dsc00086.jpg','pickleball/dsc00383.jpg','pickleball/dsc00474.jpg','pickleball/dsc00477.jpg']
+    },
+    minigolf: {
+      label: 'Mini Golf',
+      title: 'Backyard course',
+      desc: 'A full mini golf course set against a tropical backdrop. Competitions welcome.',
+      photos: ['minigolf/dsc00197.jpg','minigolf/dsc00430.jpg']
+    },
+    firepit: {
+      label: 'Fire Pit',
+      title: 'Miami nights',
+      desc: 'End every evening around the fire. Miami nights are always better outdoors.',
+      photos: ['firepit/dsc00140.jpg','firepit/dsc00257.jpg']
+    },
+    bedrooms: {
+      label: '6 Bedrooms',
+      title: 'Sleep well',
+      desc: 'Spacious, well-appointed rooms with quality linens designed for groups and families.',
+      photos: ['bedrooms/dsc00509.jpg','bedrooms/dsc00589.jpg','bedrooms/dsc00592.jpg','bedrooms/dsc00596.jpg','bedrooms/dsc00599.jpg','bedrooms/dsc00602.jpg','bedrooms/dsc00605.jpg']
+    },
+    grounds: {
+      label: 'Private Forest',
+      title: 'Your private jungle',
+      desc: 'Mature tropical trees provide natural privacy and an atmosphere unlike anything else in Miami.',
+      photos: ['forest/dsc00211.jpg','forest/dsc00223.jpg','forest/dsc00230-hdr.jpg','forest/dsc00398.jpg','forest/dsc00401.jpg']
+    },
+    kitchen: {
+      label: 'Full Kitchen',
+      title: 'Cook like at home',
+      desc: 'Fully equipped with modern appliances. Cook for the whole group without a second thought.',
+      photos: ['kitchen/dsc00521.jpg','kitchen/dsc00526.jpg','kitchen/dsc00532.jpg']
+    },
+    lounge: {
+      label: 'Lounge & The Sandbar',
+      title: 'Relax, your way',
+      desc: 'From sun loungers on private sand to shaded seating areas — every corner of this property invites you to slow down.',
+      photos: ['lounge/dsc00077.jpg','lounge/dsc00110.jpg','lounge/dsc00125.jpg','lounge/dsc00155.jpg','lounge/dsc00179.jpg','lounge/dsc00194.jpg','lounge/dsc00329.jpg','lounge/dsc00359.jpg']
+    }
+  };
+
+  // ── AMENITY PANEL LOGIC ──────────────────────────────────
+  const backdrop     = document.getElementById('amenityBackdrop');
+  const panel        = document.getElementById('amenityPanel');
+  const panelClose   = document.getElementById('panelClose');
+  const panelLabel   = document.getElementById('panelLabel');
+  const panelTitle   = document.getElementById('panelTitle');
+  const panelDesc    = document.getElementById('panelDesc');
+  const panelPhotos  = document.getElementById('panelPhotos');
+  let panelOpen      = false;
+
+  // Set initial state
+  gsap.set(panel, { x: '100%' });
+  gsap.set(backdrop, { opacity: 0 });
+
+  function openPanel(amenityKey) {
+    const data = amenityData[amenityKey];
+    if (!data) return;
+
+    // Fill content
+    panelLabel.textContent = data.label;
+    panelTitle.textContent = data.title;
+    panelDesc.textContent  = data.desc;
+
+    panelPhotos.innerHTML = data.photos.map((photo, i) => `
+      <div class="panel-photo" data-src="images/${photo}" style="order:${i}">
+        <img src="images/${photo}" alt="${data.label} photo ${i+1}" loading="lazy">
+        <div class="panel-photo-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+          </svg>
+        </div>
+      </div>
+    `).join('');
+
+    // Attach lightbox to panel photos
+    panelPhotos.querySelectorAll('.panel-photo').forEach(ph => {
+      ph.addEventListener('click', () => {
+        lbImg.src = ph.dataset.src;
+        lightbox.classList.add('open');
+        gsap.fromTo(lbImg, { opacity:0, scale:0.94 }, { opacity:1, scale:1, duration:0.35, ease:'power2.out' });
+      });
+    });
+
+    // Animate photos in after panel enters
+    backdrop.style.display = 'block';
+    panelOpen = true;
+
+    gsap.timeline()
+      .to(backdrop, { opacity: 1, duration: 0.35, ease: 'power2.out' })
+      .to(panel, { x: '0%', duration: 0.5, ease: 'power3.out' }, '<0.05')
+      .fromTo('.panel-photo',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, ease: 'power2.out' },
+        '-=0.15'
+      );
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePanel() {
+    if (!panelOpen) return;
+    panelOpen = false;
+    gsap.timeline()
+      .to(panel, { x: '100%', duration: 0.45, ease: 'power3.in' })
+      .to(backdrop, { opacity: 0, duration: 0.3, ease: 'power2.in' }, '<0.1')
+      .call(() => { backdrop.style.display = 'none'; document.body.style.overflow = ''; });
+  }
+
+  document.querySelectorAll('.amenity-item').forEach(item => {
+    item.addEventListener('click', () => openPanel(item.dataset.amenity));
+  });
+
+  panelClose.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && panelOpen) closePanel(); });
+
+  // ── NAV SCROLL ──────────────────────────────────────────
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ── MOBILE MENU ─────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu  = document.getElementById('closeMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  closeMenu.addEventListener('click',  () => mobileMenu.classList.remove('open'));
+  document.querySelectorAll('.mobile-link').forEach(l =>
+    l.addEventListener('click', () => mobileMenu.classList.remove('open'))
+  );
+
+  // ── HERO ENTRANCE — GSAP timeline ───────────────────────
+  const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  heroTl
+    .to('.hero-tag',     { opacity: 1, y: 0, duration: 0.8 }, 0.5)
+    .to('.hero h1',      { opacity: 1, y: 0, duration: 0.9 }, 0.75)
+    .to('.hero-meta',    { opacity: 1, y: 0, duration: 0.8 }, 1.05)
+    .to('.hero-actions', { opacity: 1, y: 0, duration: 0.8 }, 1.25);
+
+  // Set starting state for GSAP-controlled elements
+  gsap.set(['.hero-tag', '.hero h1', '.hero-meta', '.hero-actions'], { opacity: 0, y: 28 });
+
+  // ── BUTTONS — hover animations con GSAP ─────────────────
+  document.querySelectorAll('.btn-primary, .btn-ghost, .nav-cta, .whatsapp-btn, .booking-card .whatsapp-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      gsap.to(btn, {
+        y: -3,
+        scale: 1.02,
+        duration: 0.28,
+        ease: 'power2.out'
+      });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, {
+        y: 0,
+        scale: 1,
+        duration: 0.35,
+        ease: 'elastic.out(1, 0.6)'
+      });
+    });
+    btn.addEventListener('mousedown', () => {
+      gsap.to(btn, { scale: 0.97, y: 1, duration: 0.1, ease: 'power2.in' });
+    });
+    btn.addEventListener('mouseup', () => {
+      gsap.to(btn, { scale: 1.02, y: -3, duration: 0.2, ease: 'power2.out' });
+    });
+  });
+
+  // ── QUICK LINKS hover ────────────────────────────────────
+  document.querySelectorAll('.quick-link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      gsap.to(link, { x: 6, duration: 0.25, ease: 'power2.out' });
+    });
+    link.addEventListener('mouseleave', () => {
+      gsap.to(link, { x: 0, duration: 0.35, ease: 'elastic.out(1, 0.5)' });
+    });
+  });
+
+  // ── SCROLL REVEAL — ScrollTrigger ───────────────────────
+  gsap.utils.toArray('.reveal').forEach((el, i) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+
+  // ── AMENITY ITEMS stagger ────────────────────────────────
+  gsap.fromTo('.amenity-item',
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1, y: 0,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.amenities-grid',
+        start: 'top 80%'
+      }
+    }
+  );
+
+  // ── GALLERY ITEMS stagger ────────────────────────────────
+  gsap.fromTo('.gallery-item',
+    { opacity: 0, scale: 0.97 },
+    {
+      opacity: 1, scale: 1,
+      duration: 0.7,
+      stagger: 0.08,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.gallery-grid',
+        start: 'top 82%'
+      }
+    }
+  );
+
+  // ── FLOATING WA BUTTON entrance ─────────────────────────
+  gsap.fromTo('.wa-float',
+    { opacity: 0, y: 20, scale: 0.9 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.5)', delay: 2.5 }
+  );
+
+  // ── WA FLOAT hover ──────────────────────────────────────
+  const waFloat = document.querySelector('.wa-float');
+  if (waFloat) {
+    waFloat.addEventListener('mouseenter', () =>
+      gsap.to(waFloat, { y: -4, scale: 1.05, duration: 0.25, ease: 'power2.out' })
+    );
+    waFloat.addEventListener('mouseleave', () =>
+      gsap.to(waFloat, { y: 0, scale: 1, duration: 0.4, ease: 'elastic.out(1, 0.5)' })
+    );
+  }
+
+  // ── LIGHTBOX ─────────────────────────────────────────────
+  const galleryImages = [
+    'images/aerial/max_0089-hdr.jpg',
+    'images/forest/dsc00211.jpg',
+    'images/pool/dsc00440.jpg',
+    'images/gameroom/dsc00540.jpg',
+    'images/lounge/dsc00155.jpg',
+    'images/bedrooms/dsc00589.jpg',
+    'images/aerial/max_0073-hdr.jpg',
+  ];
+  let currentImg = 0;
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lbImg');
+
+  function openLightbox(index) {
+    currentImg = index;
+    lbImg.src  = galleryImages[currentImg];
+    lightbox.classList.add('open');
+    gsap.fromTo(lbImg, { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.35, ease: 'power2.out' });
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => openLightbox(parseInt(item.dataset.index)));
+  });
+
+  document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+
+  document.getElementById('lbPrev').addEventListener('click', () => {
+    currentImg = (currentImg - 1 + galleryImages.length) % galleryImages.length;
+    gsap.fromTo(lbImg, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: 'power2.out',
+      onStart: () => { lbImg.src = galleryImages[currentImg]; }
+    });
+  });
+  document.getElementById('lbNext').addEventListener('click', () => {
+    currentImg = (currentImg + 1) % galleryImages.length;
+    gsap.fromTo(lbImg, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.3, ease: 'power2.out',
+      onStart: () => { lbImg.src = galleryImages[currentImg]; }
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      lightbox.classList.remove('open');
+    if (e.key === 'ArrowLeft')   document.getElementById('lbPrev').click();
+    if (e.key === 'ArrowRight')  document.getElementById('lbNext').click();
+  });
+
+  // ── SMOOTH SCROLL ────────────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      gsap.to(window, {
+        scrollTo: { y: target.offsetTop - 80 },
+        duration: 1.1,
+        ease: 'power3.inOut'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
