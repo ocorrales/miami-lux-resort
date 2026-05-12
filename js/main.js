@@ -8,7 +8,7 @@
 const CONFIG = {
   // Replace with the real WhatsApp number (digits only, with country code)
   // Example: "13055550123" for a Miami number
-  whatsappNumber: "1XXXXXXXXXX",
+  whatsappNumber: "17864448446",
   whatsappMessage: "Hi! I'm interested in booking Paradise House Miami. Can you share availability and pricing? 🌴",
 };
 
